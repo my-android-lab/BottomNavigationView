@@ -27,6 +27,12 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, historyFragment)
             .commitAllowingStateLoss()
 
+        bottomNavigation.showBadge(R.id.action_history)
+            .number = 99
+
+        bottomNavigation.showBadge(R.id.action_favorites)
+            .clearBadgeNumber()
+
         bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.action_history -> {
